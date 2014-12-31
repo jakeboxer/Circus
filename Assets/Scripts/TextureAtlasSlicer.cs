@@ -1,4 +1,7 @@
-﻿using UnityEditor;
+﻿using System;
+using System.Collections.Generic;
+using System.Xml;
+using UnityEditor;
 using UnityEngine;
 
 public class TextureAtlasSlicer : EditorWindow {
@@ -49,9 +52,64 @@ public class TextureAtlasSlicer : EditorWindow {
 		}
 
 		if (GUILayout.Button("Slice")) {
-			// PerformSlice()
+//			PerformSlice()
 		}
 
 		GUI.enabled = enabled;
+	}
+
+	private void PerformSlice () {
+		XmlDocument document = new XmlDocument();
+		document.LoadXml(xmlAsset.text);
+
+		XmlElement root = document.DocumentElement;
+
+		if (root.Name == "TextureAtlas") {
+			Texture2D texture = AssetDatabase.LoadMainAssetAtPath(importer.assetPath) as Texture2D;
+			int textureHeight = texture.height;
+			bool failed = false;
+			List<SpriteMetaData> metaDataList = new List<SpriteMetaData>();
+
+			foreach (XmlNode childNode in root.ChildNodes) {
+				if (childNode.Name == "SubTexture") {
+					try {
+						int width = Convert.ToInt32(childNode.Attributes["width"].Value);
+						int height = Convert.ToInt32(childNode.Attributes["height"].Value);
+						int x = Convert.ToInt32(childNode.Attributes["x"].Value);
+						int y = textureHeight - (height + Convert.ToInt32(childNode.Attributes["y"].Value));
+
+						SpriteMetaData spriteMetaData = new SpriteMetaData {
+							alignment = (int) spriteAlignment,
+							border = new Vector4(),
+							name = childNode.Attributes["name"].Value,
+//							pivot = GetPivotValue(spriteAlignment, customOffset),
+							rect = new Rect(x, y, width, height)
+						};
+
+						metaDataList.Add(spriteMetaData);
+					} catch (Exception exception) {
+						failed = true;
+						Debug.LogException(exception);
+					}
+				}
+			}
+
+			if (!failed) {
+				importer.spriteImportMode = SpriteImportMode.Multiple;
+				importer.spritesheet = metaDataList.ToArray();
+
+				EditorUtility.SetDirty(importer);
+
+				try {
+					AssetDatabase.StartAssetEditing();
+					AssetDatabase.ImportAsset(importer.assetPath);
+				} finally {
+					AssetDatabase.StopAssetEditing();
+					Close();
+				}
+			}
+		} else {
+			Debug.LogError("XML needs to have a 'TextureAtlas' root node!");
+		}
 	}
 }
