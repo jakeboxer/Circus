@@ -67,7 +67,7 @@ public class TextureAtlasSlicer : EditorWindow {
 
 		bool enabled = GUI.enabled;
 		if (spriteAlignment != SpriteAlignment.Custom) {
-			enabled = false;
+			GUI.enabled = false;
 		}
 
 		EditorGUILayout.Vector2Field("Custom Offset", customOffset);
