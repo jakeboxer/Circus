@@ -64,9 +64,11 @@ public class Player : MonoBehaviour {
 	}
 
 	private void ClampVelocity () {
-		rigidbody2D.velocity = new Vector2(
-			Mathf.Clamp(rigidbody2D.velocity.x, -maxVelocity.x, maxVelocity.x),
-			Mathf.Clamp(rigidbody2D.velocity.y, -maxVelocity.y, maxVelocity.y)
-		);
+		if (Mathf.Abs(rigidbody2D.velocity.x) > maxVelocity.x || Mathf.Abs(rigidbody2D.velocity.y) > maxVelocity.y) {
+			rigidbody2D.velocity = new Vector2(
+				Mathf.Clamp(rigidbody2D.velocity.x, -maxVelocity.x, maxVelocity.x),
+				Mathf.Clamp(rigidbody2D.velocity.y, -maxVelocity.y, maxVelocity.y)
+			);
+		}
 	}
 }
