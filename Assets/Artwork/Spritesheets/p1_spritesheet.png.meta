@@ -2,22 +2,22 @@ fileFormatVersion: 2
 guid: e827fec6a0d5f4560b1641de3b1f7420
 TextureImporter:
   fileIDToRecycleName:
-    21300000: p1_spritesheet_0
-    21300002: p1_spritesheet_1
-    21300004: p1_spritesheet_2
-    21300006: p1_spritesheet_3
-    21300008: p1_spritesheet_4
-    21300010: p1_spritesheet_5
-    21300012: p1_spritesheet_6
-    21300014: p1_spritesheet_7
-    21300016: p1_spritesheet_8
-    21300018: p1_spritesheet_9
-    21300020: p1_spritesheet_10
-    21300022: p1_spritesheet_11
-    21300024: p1_spritesheet_12
-    21300026: p1_spritesheet_13
-    21300028: p1_spritesheet_14
-    21300030: p1_spritesheet_15
+    21300000: PlayerWalk01
+    21300002: PlayerWalk02
+    21300004: PlayerWalk03
+    21300006: PlayerWalk07
+    21300008: PlayerWalk08
+    21300010: PlayerWalk10
+    21300012: PlayerHurt
+    21300014: PlayerWalk04
+    21300016: PlayerWalk05
+    21300018: PlayerWalk06
+    21300020: PlayerWalk09
+    21300022: PlayerWalk11
+    21300024: PlayerDuck
+    21300026: PlayerJump
+    21300028: PlayerFront
+    21300030: PlayerIdle
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,7 +59,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: p1_spritesheet_0
+    - name: PlayerWalk01
       rect:
         serializedVersion: 2
         x: 0
@@ -69,7 +69,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_1
+    - name: PlayerWalk02
       rect:
         serializedVersion: 2
         x: 72
@@ -79,7 +79,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_2
+    - name: PlayerWalk03
       rect:
         serializedVersion: 2
         x: 144
@@ -87,9 +87,9 @@ TextureImporter:
         width: 72
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_3
+    - name: PlayerWalk07
       rect:
         serializedVersion: 2
         x: 216
@@ -97,9 +97,9 @@ TextureImporter:
         width: 72
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_4
+    - name: PlayerWalk08
       rect:
         serializedVersion: 2
         x: 288
@@ -107,9 +107,9 @@ TextureImporter:
         width: 72
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_5
+    - name: PlayerWalk10
       rect:
         serializedVersion: 2
         x: 360
@@ -119,7 +119,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_6
+    - name: PlayerHurt
       rect:
         serializedVersion: 2
         x: 432
@@ -129,7 +129,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_7
+    - name: PlayerWalk04
       rect:
         serializedVersion: 2
         x: 0
@@ -139,7 +139,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_8
+    - name: PlayerWalk05
       rect:
         serializedVersion: 2
         x: 72
@@ -147,9 +147,9 @@ TextureImporter:
         width: 72
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_9
+    - name: PlayerWalk06
       rect:
         serializedVersion: 2
         x: 144
@@ -157,9 +157,9 @@ TextureImporter:
         width: 72
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_10
+    - name: PlayerWalk09
       rect:
         serializedVersion: 2
         x: 216
@@ -169,7 +169,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_11
+    - name: PlayerWalk11
       rect:
         serializedVersion: 2
         x: 288
@@ -179,7 +179,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_12
+    - name: PlayerDuck
       rect:
         serializedVersion: 2
         x: 365
@@ -189,7 +189,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_13
+    - name: PlayerJump
       rect:
         serializedVersion: 2
         x: 438
@@ -199,7 +199,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_14
+    - name: PlayerFront
       rect:
         serializedVersion: 2
         x: 0
@@ -209,7 +209,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: p1_spritesheet_15
+    - name: PlayerIdle
       rect:
         serializedVersion: 2
         x: 67
