@@ -72,7 +72,7 @@ TextureImporter:
     - name: PlayerWalk02
       rect:
         serializedVersion: 2
-        x: 72
+        x: 73
         y: 191
         width: 72
         height: 97
@@ -82,7 +82,7 @@ TextureImporter:
     - name: PlayerWalk03
       rect:
         serializedVersion: 2
-        x: 144
+        x: 146
         y: 191
         width: 72
         height: 97
@@ -92,7 +92,7 @@ TextureImporter:
     - name: PlayerWalk07
       rect:
         serializedVersion: 2
-        x: 216
+        x: 219
         y: 191
         width: 72
         height: 97
@@ -102,7 +102,7 @@ TextureImporter:
     - name: PlayerWalk08
       rect:
         serializedVersion: 2
-        x: 288
+        x: 292
         y: 191
         width: 72
         height: 97
@@ -112,7 +112,7 @@ TextureImporter:
     - name: PlayerWalk10
       rect:
         serializedVersion: 2
-        x: 360
+        x: 365
         y: 191
         width: 72
         height: 97
@@ -122,9 +122,9 @@ TextureImporter:
     - name: PlayerHurt
       rect:
         serializedVersion: 2
-        x: 432
+        x: 438
         y: 191
-        width: 72
+        width: 69
         height: 97
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -142,7 +142,7 @@ TextureImporter:
     - name: PlayerWalk05
       rect:
         serializedVersion: 2
-        x: 72
+        x: 73
         y: 94
         width: 72
         height: 97
@@ -152,7 +152,7 @@ TextureImporter:
     - name: PlayerWalk06
       rect:
         serializedVersion: 2
-        x: 144
+        x: 146
         y: 94
         width: 72
         height: 97
@@ -162,7 +162,7 @@ TextureImporter:
     - name: PlayerWalk09
       rect:
         serializedVersion: 2
-        x: 216
+        x: 219
         y: 93
         width: 72
         height: 98
@@ -172,7 +172,7 @@ TextureImporter:
     - name: PlayerWalk11
       rect:
         serializedVersion: 2
-        x: 288
+        x: 292
         y: 94
         width: 72
         height: 97
