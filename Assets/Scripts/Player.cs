@@ -49,13 +49,16 @@ public class Player : MonoBehaviour {
 			if (absVelocityX > 0) {
 				// We're moving horizontally.
 				animator.SetInteger("AnimState", 1);
+				animator.speed = absVelocityX * 2f / maxVelocity.x;
 			} else {
 				// We're standing still.
 				animator.SetInteger("AnimState", 0);
+				animator.speed = 1f;
 			}
 		} else {
 			// We're in the air.
 			animator.SetInteger("AnimState", 2);
+			animator.speed = 1f;
 		}
 	}
 	
