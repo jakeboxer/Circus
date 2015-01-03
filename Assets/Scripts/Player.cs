@@ -25,19 +25,12 @@ public class Player : MonoBehaviour {
 		var absVelocityX = Mathf.Abs(velocityX);
 		var absVelocityY = Mathf.Abs(rigidbody2D.velocity.y);
 		
-		if (controller.moving.x == 0) {
-			// We're not moving horizontally.
-			animator.SetInteger("AnimState", 0);
-		} else {
+		if (controller.moving.x != 0) {
 			// We're moving horizontally.
-
-			// We haven't yet reached the horizontal speed limit.
 			forceX = speed * controller.moving.x;
 			
 			// Face in the direction we're moving horizontally.
 			transform.localScale = new Vector3(controller.moving.x > 0 ? 1 : -1, 1, 1);
-			
-			animator.SetInteger("AnimState", 1);
 		}
 
 		if (controller.moving.y > 0) {
@@ -46,15 +39,24 @@ public class Player : MonoBehaviour {
 				forceY = jumpSpeed * controller.moving.y;
 				grounded = false;
 			}
-			
-			animator.SetInteger("AnimState", 2);
-		} else if (absVelocityY > 0) {
-			// We're not jumping but we are in the air (probably falling).
-			animator.SetInteger("AnimState", 3);
 		}
 		
 		rigidbody2D.AddForce(new Vector2(forceX, forceY));
 		ClampVelocity();
+
+		if (grounded) {
+			// We're on the ground.
+			if (absVelocityX > 0) {
+				// We're moving horizontally.
+				animator.SetInteger("AnimState", 1);
+			} else {
+				// We're standing still.
+				animator.SetInteger("AnimState", 0);
+			}
+		} else {
+			// We're in the air.
+			animator.SetInteger("AnimState", 2);
+		}
 	}
 	
 	void OnCollisionEnter2D (Collision2D target) {
