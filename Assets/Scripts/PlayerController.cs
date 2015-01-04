@@ -14,15 +14,15 @@ public class PlayerController : MonoBehaviour {
 		moving.x = 0;
 		moving.y = 0;
 		
-		if (Input.GetKey("right")) {
+		if (Input.GetKey("d")) {
 			moving.x = 1;
-		} else if (Input.GetKey("left")) {
+		} else if (Input.GetKey("a")) {
 			moving.x = -1;
 		}
 		
-		if (Input.GetKey("up")) {
+		if (Input.GetKey("w")) {
 			moving.y = 1;
-		} else if (Input.GetKey("down")) {
+		} else if (Input.GetKey("s")) {
 			moving.y = -1;
 		}
 	}
