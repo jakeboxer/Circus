@@ -24,4 +24,8 @@ public class MainMenuButtons : MonoBehaviour {
 	public void ShowControls () {
 		Application.LoadLevel("Controls");
 	}
+
+	public void ExitControls () {
+		Application.LoadLevel("MainMenu");
+	}
 }
