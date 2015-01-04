@@ -3,7 +3,9 @@ using System.Collections;
 
 public class FallDetectorDeathZone : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D otherCollider) {
-		Destroy(otherCollider.gameObject);
+		if (otherCollider.gameObject.tag == "Player") {
+			otherCollider.gameObject.GetComponent<Player>().Respawn();
+		}
 	}
 
 	void OnDrawGizmos () {

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public float airSpeedMultiplier = 0.3f;
 	public bool grounded = true;
 	public float jumpSpeed = 400f;
+	public GameObject respawnPoint;
 	
 	private Animator animator;
 	private PlayerController controller;
@@ -58,6 +59,15 @@ public class Player : MonoBehaviour {
 			// We're in the air.
 			animator.SetInteger("AnimState", 2);
 			animator.speed = 1f;
+		}
+	}
+
+	public void Respawn () {
+		rigidbody2D.velocity = Vector2.zero;
+
+		if (respawnPoint != null) {
+			transform.position = respawnPoint.transform.position;
+			transform.localScale = respawnPoint.transform.localScale;
 		}
 	}
 	
