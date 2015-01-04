@@ -23,7 +23,6 @@ public class Player : MonoBehaviour {
 		
 		var velocityX = rigidbody2D.velocity.x;
 		var absVelocityX = Mathf.Abs(velocityX);
-		var absVelocityY = Mathf.Abs(rigidbody2D.velocity.y);
 		
 		if (controller.moving.x != 0) {
 			// We're moving horizontally.
