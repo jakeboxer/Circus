@@ -20,4 +20,8 @@ public class MainMenuButtons : MonoBehaviour {
 	public void ExitGame () {
 		Application.Quit();
 	}
+
+	public void ShowControls () {
+		Application.LoadLevel("Controls");
+	}
 }
