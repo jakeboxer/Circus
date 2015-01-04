@@ -14,7 +14,7 @@ public class MainMenuButtons : MonoBehaviour {
 	}
 
 	public void StartGame () {
-		Application.LoadLevel("BasicPlatformStaging");
+		Application.LoadLevel("Level01");
 	}
 
 	public void ExitGame () {
